@@ -1,5 +1,6 @@
 import express from "express"
 import userRoute from "./routes/userRouter.js"
+import productRoute from "./routes/productRouter.js"
 import path from "path"
 import session from "express-session"
 import nocache from "nocache"
@@ -27,6 +28,9 @@ app.get("/",(req,res)=>{
 // user rotuer
 app.use("/user",userRoute)
 
-app.listen(port,()=>{
+// product rotuer
+app.use("/products",productRoute)
+
+app.listen(port || 50001,()=>{
     console.log(`Server is running on port ${port}`);
 })
