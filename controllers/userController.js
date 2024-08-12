@@ -19,7 +19,7 @@ export const userLogin = (req, res) => {
 export const userValdation = (req, res) => {
   const { email, password } = req.body;
   if (email.length <= 0 && password.length <= 0) {
-    req.session.emptymessage = "Type at least 3 characters";
+    req.session.emptymessage = "please fill out all the fields";
     return res.redirect("/user/login");
   }
 
